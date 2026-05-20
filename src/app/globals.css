@@ -123,4 +123,77 @@ body {
   .float-slow {
     animation: float-y 6s ease-in-out infinite;
   }
+
+  /* Custom Premium Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-ink-ridge);
+    border: 1px solid var(--color-ink);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-cheese);
+  }
+
+  /* Core Design Overhaul Utility Tokens */
+  .glass {
+    background: rgba(20, 20, 20, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(244, 236, 216, 0.08);
+  }
+
+  .glass-cheese {
+    background: rgba(245, 165, 36, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(245, 165, 36, 0.16);
+  }
+
+  .glow-cheese {
+    box-shadow: 0 0 50px -12px rgba(245, 165, 36, 0.25);
+  }
+
+  .glow-char {
+    box-shadow: 0 0 50px -12px rgba(194, 65, 12, 0.3);
+  }
+
+  .text-glow-cheese {
+    text-shadow: 0 0 15px rgba(245, 165, 36, 0.45);
+  }
+
+  /* Shine hover effect */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 30%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(25deg);
+    transition: none;
+  }
+
+  .btn-shine:hover::after {
+    left: 120%;
+    transition: left 0.75s ease-in-out;
+  }
 }
+
